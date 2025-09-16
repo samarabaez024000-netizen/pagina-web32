@@ -1,0 +1,52 @@
+ <<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botón que Cambia de Color</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="colorButton">¡Cambia mi color!</button>
+
+  <script>
+    // Función para generar un color aleatorio
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // Obtener el botón
+    const button = document.getElementById('colorButton');
+
+    // Agregar el evento al botón para que cambie de color al hacer clic
+    button.addEventListener('click', function() {
+      button.style.backgroundColor = getRandomColor();
+    });
+  </script>
+
+</body>
+</html>
